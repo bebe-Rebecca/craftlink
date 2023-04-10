@@ -1,24 +1,63 @@
-# README
+# アプリケーション名
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+craftlink
 
-Things you may want to cover:
+# アプリケーション概要
 
-* Ruby version
+後継者を求める職人の方が仕事内容を投稿し、仕事に興味を持った人が質問をすることができる。
 
-* System dependencies
+## URL
 
-* Configuration
+## テスト用アカウント
 
-* Database creation
+# 利用方法
 
-* Database initialization
+## 仕事内容投稿
 
-* How to run the test suite
+1.トップページ（一覧ページ）のヘッダーからユーザー新規登録を行う
 
-* Services (job queues, cache servers, search engines, etc.)
+2.後継者を求める側は投稿ボタンから仕事内容（職種名、店舗名 or 工房名、仕事内容について、地域、画像）を入力し投稿する
 
-* Deployment instructions
+## 質問投稿・回答
 
-* ...
+1.気になる仕事がある場合、記事の詳細ページにある質問投稿ボタンから質問することができる
+
+2.質問した内容はマイページより確認できる
+
+3.記事投稿者は質問があった場合、質問詳細ページにある回答フォームから回答を送信できる
+
+# アプリケーションを作成した背景
+
+以前より伝統工芸などの職人の方の後継者がなかなか見つからないという問題があります。
+しかし、後継者が見つからないという問題よりも先にそもそも世の中にはどういった仕事がありどのような仕事内容なのか知る人が少ないのではと考えました。
+そこでまずは簡単に仕事内容について知ることができる場があればいいのではと思い今回アプリを作成しました。
+
+# 洗い出した要件
+
+https://docs.google.com/spreadsheets/d/1IkkA2ZGR_daa-8xs5zKlKFpXK_cVxb0ZPOp_D2gPTNA/edit#gid=982722306
+
+# 実装した機能についての画像や GIF およびその説明
+
+# 実装予定の機能
+
+- ユーザー管理（実装中）
+- 職種内容管理（実装中）
+- 検索機能（実装中）
+- 問い合わせ管理（実装中）
+- お気に入り管理（実装中）
+
+# データベース設計
+
+[![Image from Gyazo](https://i.gyazo.com/c04e111ba333ad90dce962688ab3699f.png)](https://gyazo.com/c04e111ba333ad90dce962688ab3699f)
+
+# 画面遷移図
+
+[![Image from Gyazo](https://i.gyazo.com/a01c480debd448c410a7e9c47c557fda.png)](https://gyazo.com/a01c480debd448c410a7e9c47c557fda)
+
+# 開発環境
+
+- フロントエンド
+- バックエンド
+- タスク管理
+- テキストエディタ
+- Ruby
