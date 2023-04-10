@@ -61,3 +61,89 @@ https://docs.google.com/spreadsheets/d/1IkkA2ZGR_daa-8xs5zKlKFpXK_cVxb0ZPOp_D2gP
 - タスク管理
 - テキストエディタ
 - Ruby
+
+# テーブル設計
+
+## users テーブル
+
+| Column             | Type   | Options                   |
+| ------------------ | ------ | ------------------------- |
+| nickname           | string |                           |
+| email              | string | null: false, unique: true |
+| encrypted_password | string | null: false               |
+| last_name          | string | null: false               |
+| first_name         | string | null: false               |
+| last_name_kana     | string | null: false               |
+| first_name_kana    | string | null: false               |
+| birth_date         | date   | null: false               |
+
+### Association
+
+- has_many :jobs
+- has_many :questions
+- has_many :favorites, through: :favorite_users
+
+## jobs テーブル
+
+| Column                  | Type       | Options                        |
+| ----------------------- | ---------- | ------------------------------ |
+| job_title               | string     | null: false                    |
+| workshop_name           | string     | null: false                    |
+| description             | text       | null: false                    |
+| origin_to_prefecture_id | integer    | null: false                    |
+| user                    | references | null: false, foreign_key: true |
+
+### Association
+
+- belongs_to :user
+- has_many :favorites
+
+## favorite_users テーブル
+
+| Column   | Type       | Options                        |
+| -------- | ---------- | ------------------------------ |
+| user     | references | null: false, foreign_key: true |
+| favorite | references | null: false, foreign_key: true |
+
+### Association
+
+- belongs_to :user
+- belongs_to :favorite
+
+## favorites テーブル
+
+| Column | Type       | Options                        |
+| ------ | ---------- | ------------------------------ |
+| user   | references | null: false, foreign_key: true |
+| job    | references | null: false, foreign_key: true |
+
+### Association
+
+- belongs_to :job
+- has_many :users, through: :favorite_users
+
+## questions テーブル
+
+| Column  | Type       | Options                        |
+| ------- | ---------- | ------------------------------ |
+| name    | string     | null: false                    |
+| title   | string     | null: false                    |
+| content | text       | null: false                    |
+| user    | references | null: false, foreign_key: true |
+
+### Association
+
+- belongs_to :user
+- has_one :answer
+
+## answers テーブル
+
+| Column   | Type       | Options                        |
+| -------- | ---------- | ------------------------------ |
+| name     | string     | null: false                    |
+| content  | text       | null: false                    |
+| question | references | null: false, foreign_key: true |
+
+### Association
+
+- belongs_to :question
