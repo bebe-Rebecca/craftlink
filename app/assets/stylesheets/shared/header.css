@@ -1,21 +1,6 @@
-body {
-  font-family: "Taviraj", serif;
-  font-size: 14px;
-}
-
-a {
-  text-decoration: none;
-  color: #000;
-}
-
 .container {
   max-width: 1140px;
   margin: 0 auto;
-}
-
-.row {
-  display: flex;
-  align-items: center;
 }
 
 .bland-logo {
@@ -23,7 +8,7 @@ a {
 }
 
 .nav {
-  font-size: 18px;
+  font-size: 23px;
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
@@ -36,12 +21,6 @@ a {
   min-width: 200px;
 }
 
-.post-list {
-  text-decoration: none;
-  margin-right: 3vw;
-  color: #333333;
-}
-
 .lists-right {
   display: flex;
   list-style: none;
@@ -51,23 +30,41 @@ a {
 .user-nickname {
   text-decoration: none;
   margin-right: 3vw;
-  color: #333333;
+  color: black;
   font-weight: bold;
-}
-
-.logout {
-  text-decoration: none;
-  color: #333333;
+  padding: 0.5em 1em;
+  font-family: serif;
+  font-weight: bold;
+  text-align: center;
+  padding: 40px 0;
 }
 
 .login {
   text-decoration: none;
   line-height: 32px;
   margin-right: 3vw;
-  color: #333333;
+  color: black;
+  font-family: serif;
+  font-weight: bold;
+  text-align: center;
+  padding: 40px 0;
 }
 
+.post-list,
+.logout,
 .sign-up {
   text-decoration: none;
-  color: #333333;
+  color: black;
+  font-family: serif;
+  font-weight: bold;
+  text-align: center;
+  padding: 40px 0;
+}
+
+.post-list:hover,
+.user-nickname:hover,
+.logout:hover,
+.login:hover,
+.sign-up:hover {
+  color: #fff;
 }
