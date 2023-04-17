@@ -48,16 +48,6 @@
   font-weight: bold;
 }
 
-.indispensable_nickname {
-  background: #0099e8;
-  margin-left: 8px;
-  padding: 3px;
-  border-radius: 2px;
-  color: #fff;
-  font-size: 12px;
-  font-weight: bold;
-}
-
 .input-default {
   width: 100%;
   margin-top: 5px;
@@ -162,7 +152,7 @@
 
 .register-info {
   margin: 30px 180px 0 0;
-  color: #3c88f7;
+  color: #0099e8;
   text-align: right;
   cursor: pointer;
 }

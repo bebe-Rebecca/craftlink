@@ -4,6 +4,8 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
+  has_many :jobs
+
   with_options presence: true do
     validates :birth_date
     validates :nickname, length: { maximum: 10 }, allow_blank: true
