@@ -1,0 +1,60 @@
+<div class="jobs-post-contents">
+  <header class="jobs-post-header">
+    <%= link_to image_tag("facebook_cover_photo_1.png", class:"craftlink-icon", size:'200x80'), "/"%>
+  </header>
+    <div class="jobs-post-main">
+      <h2 class="jobs-post-title">仕事情報を入力</h2>
+  <%= form_with model: @job, local: true do |f| %>
+
+      <%= render 'shared/error_messages', model: f.object %>
+
+      <%# 画像 %>
+      <div class="img-upload">
+        <div class="weight-bold-text">
+          関連画像
+          <span class="indispensable">必須</span>
+        </div>
+        <div class="click-upload">
+          <p>
+            クリックしてファイルをアップロード
+          </p>
+          <%= f.file_field :image, id:"item-image" %>
+        </div>
+      </div>
+      <%# /画像 %>
+      
+      <%# 仕事情報 %>
+      <div class="new-jobs">
+        <div class="weight-bold-text">
+          職種名
+          <span class="indispensable">必須</span>
+        </div>
+        <%= f.text_area :job_title, class:"jobs-text", id:"job-title", placeholder:"職種名（必須 20文字まで)", maxlength:"20" %>
+        <div class="weight-bold-text">
+          店名 / 工房名
+          <span class="indispensable">必須</span>
+        </div>
+        <%= f.text_area :workshop_name, class:"jobs-text", id:"workshop_name", placeholder:"職種名（必須 20文字まで)", maxlength:"20" %>
+        <div class="weight-bold-text">
+          場所
+          <span class="indispensable">必須</span>
+        </div>
+        <%= f.collection_select(:origin_to_prefecture_id, OriginToPrefecture.all, :id, :name, {}, {class:"select-box", id:"item-category"}) %>
+        <div class="weight-bold-text">
+          仕事内容
+          <span class="indispensable">必須</span>
+        </div>
+        <%= f.text_area :description, class:"jobs-text", id:"job-info", placeholder:"商品の説明（必須 1,000文字まで）（色、素材、重さ、定価、注意点など）例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。" ,rows:"7" ,maxlength:"1000" %>
+      </div>
+      <%# /仕事情報 %>
+
+      <%# 下部ボタン %>
+      <div class="post-btn-contents">
+        <%= f.submit "投稿する" ,class:"post-btn" %>
+        <%=link_to 'もどる', root_path, class:"back-btn" %>
+      </div>
+      <%# /下部ボタン %>
+    </div>
+  <% end %>
+
+</div>

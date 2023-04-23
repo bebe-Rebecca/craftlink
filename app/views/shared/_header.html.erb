@@ -5,7 +5,7 @@
 	</div>
 	<div class='nav'>
     <ul class='lists-left'>
-      <li><%= link_to '投稿する', "#", class: "post-list" %></li>
+      <li><%= link_to '投稿する', new_job_path, class: "post-list" %></li>
     </ul>
     <ul class='lists-right'>
       <% if user_signed_in? %>
