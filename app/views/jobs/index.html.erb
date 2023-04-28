@@ -3,7 +3,32 @@
   <%# 画面上部の帯部分 %>
 	<div class='hero'></div>
   <%# /画面上部の帯部分  %>
-
-  
+  <div class="container pt-5">
+    <div class="mt4rem text-center mb-5 pb-4">
+      <h2 class="sv-logo">職種一覧</h2>
+      <p>仕事の達人たちの世界を覗いてみよう</p>
+      <div class="line"></div>
+    </div>
+    <div class="row">
+      <% @jobs.each do |job| %>
+        <div class="col-md-4 mb-5">
+          <div class="card shadow">
+            <%= image_tag job.image, class: "job-img" %>
+            <div class="card-body row align-items-end">
+              <div class="col-sm-9 job_title">
+                <%= job.job_title %>
+                <div class="workshop_name">
+                  <%= job.workshop_name %>
+                </div>
+              </div>
+              <div class="col-sm-3 text-right">
+					    	<button type="button" class="btn btn-outline-danger">詳細</button>
+					    </div>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
 </div>
 <%= render "shared/footer" %>

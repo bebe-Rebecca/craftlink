@@ -16,3 +16,27 @@ a {
 }
 
 /* //画面上部の帯部分 */
+
+.job_title {
+  font-size: 1.15rem;
+}
+.workshop_name {
+  font-size: 0.85rem;
+}
+
+.sv-logo {
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.line {
+  width: 40px;
+  height: 5px;
+  background: #911f27;
+  margin: 0 auto;
+}
+
+.btn-outline-danger {
+  background-color: #911f27;
+  border-color: #911f27;
+}
