@@ -1,0 +1,50 @@
+.job-detail-btn {
+  text-align: center;
+  background-color: #911f27;
+  font-size: 24px;
+  font-weight: bold;
+  color: #fff;
+  margin: 20px 0px;
+  padding: 2vh 10vw;
+  border-radius: 10px;
+}
+
+.or-text {
+  font-style: 20px;
+}
+
+.job-destroy {
+  background-color: lightgrey;
+  text-align: center;
+  font-size: 24px;
+  color: black;
+  margin: 20px 0px;
+  padding: 2vh 10vw;
+  border-radius: 10px;
+}
+
+/* 質問投稿部分 */
+.question-box {
+  width: 40vw;
+  background-color: #fff;
+  margin: 5vh 0;
+  text-align: center;
+}
+
+.question-btn {
+  line-height: 48px;
+  background-color: #911f27;
+  border: 1px solid #911f27;
+  color: #fff;
+  width: 50%;
+  min-width: 150px;
+  font-size: 18px;
+  border-radius: 100px;
+  margin-bottom: 2vh;
+}
+
+.question-flag-icon {
+  margin: 5px 5px 10px;
+}
+
+/* /質問投稿部分 */

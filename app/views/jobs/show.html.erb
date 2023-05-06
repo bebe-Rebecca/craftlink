@@ -1,0 +1,32 @@
+<div class="jobs-post-contents">
+  <header class="jobs-post-header">
+    <%= link_to image_tag("facebook_cover_photo_1.png", class:"craftlink-icon", size:'200x80'), "/"%>
+  </header>
+  
+    <div class="jobs-post-main">
+      <%= image_tag @job.image %>
+      <h1><%= @job.job_title %></h1>
+      <h1><%= @job.workshop_name %></h1>
+      <p><%= @job.description %></P>
+      <p><%= @job.origin_to_prefecture.name %></P>
+    </div>
+
+  <% if user_signed_in? %>
+    <% if current_user.id == @job.user_id %>
+      <%= link_to "記事の編集", root_path, method: :get, class: "job-detail-btn"%>
+      <P class="or-text">または</P>
+      <%= link_to "削除", root_path, method: :delete, class: "job-destroy" %>
+    <% else %>
+      <button type="submit" class="question-btn">
+        <%= image_tag "comment.png" ,class:"question-flag-icon" ,width:"20",height:"25"%>
+        <span>質問する<span>
+      </button>
+    <% end %>
+  <% end %>
+
+  <div class=" text-center jobs-post-main">
+    <h2 class="sv-logo">質問一覧</h2>
+    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
+    <div class="line"></div>
+  </div>
+</div>

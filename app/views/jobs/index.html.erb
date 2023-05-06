@@ -22,7 +22,11 @@
                 </div>
               </div>
               <div class="col-sm-3 text-right">
-					    	<button type="button" class="btn btn-outline-danger">詳細</button>
+                <%= link_to job_path(job) do%>
+                  <button type="button" class="btn btn-outline-danger">
+                    詳細
+                  </button>
+                <% end %>
 					    </div>
             </div>
           </div>
