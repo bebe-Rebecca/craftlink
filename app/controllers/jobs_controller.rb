@@ -1,6 +1,6 @@
 class JobsController < ApplicationController
-  before_action :authenticate_user!, only: [:new]
-  before_action :set_job, only: [:show]
+  before_action :authenticate_user!, only: [:new, :edit]
+  before_action :set_job, only: [:show, :edit, :update]
 
   def index
     @jobs = Job.all.order('created_at DESC')
@@ -20,6 +20,20 @@ class JobsController < ApplicationController
   end
 
   def show
+  end
+
+  def edit
+    if current_user.id != @job.user_id
+      redirect_to root_path
+    end
+  end
+
+  def update
+    if @job.update(job_params)
+      redirect_to job_path(@job)
+    else
+      render :edit
+    end
   end
 
   private
