@@ -1,6 +1,6 @@
 class JobsController < ApplicationController
-  before_action :authenticate_user!, only: [:new, :edit]
-  before_action :set_job, only: [:show, :edit, :update]
+  before_action :authenticate_user!, only: [:new, :edit, :destroy]
+  before_action :set_job, only: [:show, :edit, :update, :destroy]
 
   def index
     @jobs = Job.all.order('created_at DESC')
@@ -33,6 +33,15 @@ class JobsController < ApplicationController
       redirect_to job_path(@job)
     else
       render :edit
+    end
+  end
+
+  def destroy
+    if current_user.id == @job.user_id
+      @job.destroy
+      redirect_to root_path
+    else
+      redirect_to action: :index
     end
   end
 
