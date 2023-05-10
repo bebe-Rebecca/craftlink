@@ -96,6 +96,7 @@ https://docs.google.com/spreadsheets/d/1IkkA2ZGR_daa-8xs5zKlKFpXK_cVxb0ZPOp_D2gP
 ### Association
 
 - belongs_to :user
+- has_many :questions
 - has_many :favorites
 
 ## favorite_users テーブル
@@ -130,10 +131,12 @@ https://docs.google.com/spreadsheets/d/1IkkA2ZGR_daa-8xs5zKlKFpXK_cVxb0ZPOp_D2gP
 | title   | string     | null: false                    |
 | content | text       | null: false                    |
 | user    | references | null: false, foreign_key: true |
+| job     | references | null: false, foreign_key: true |
 
 ### Association
 
 - belongs_to :user
+- belongs_to :job
 - has_one :answer
 
 ## answers テーブル

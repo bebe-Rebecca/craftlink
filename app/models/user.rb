@@ -5,6 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   has_many :jobs
+  has_many :questions
 
   with_options presence: true do
     validates :birth_date
