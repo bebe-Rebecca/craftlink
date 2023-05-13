@@ -1,0 +1,9 @@
+.job-question-btn {
+  color: #fff;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.job-question-btn:hover {
+  color: #fff;
+}
