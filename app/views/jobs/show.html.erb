@@ -19,7 +19,7 @@
     <% else %>
       <button type="submit" class="question-btn">
         <%= image_tag "comment.png" ,class:"question-flag-icon" ,width:"20",height:"25"%>
-        <span>質問する<span>
+        <%= link_to "質問する", new_job_question_path(@job), class: "job-question-btn" %>
       </button>
     <% end %>
   <% end %>
